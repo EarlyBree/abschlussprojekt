@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Festlegen der Table Werte, ohne Seperation, direkt nebeneinander (collapse) */
+.myTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.myTable td,
+.myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Hintergrund jeder Zweiter Zeile ändern */
+.myTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover Effekt einfügen */
+.myTable tr:hover {
+  background-color: #ddd;
+}
+
+/* Top Zeile des Tables definieren */
+.myTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* Button styling definieren */
+.topbutton {
+  text-decoration: none;
+  border: 1px black solid;
+  background-color: #04aa6d;
+  color: white;
+  padding: 10px 5px;
+  display: inline-block;
+  margin: 0px 0px 10px 10px;
+}
+
+.topbutton:hover {
+  background-color: #05f59d;
+}

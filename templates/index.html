@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Die Refresh rate der Seite festlegen -->
+    <meta http-equiv="refresh" content="10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>Running tasks</title>
+  </head>
+  <body>
+    <h1>All running tasks</h1>
+    <!-- Der Pause/Restart Button, je nach dem welcher Wert von der Flask App angegeben wurde -->
+    {% if queueon == 1%}
+    <a href="/pause_queue/" class="topbutton">pause</a>
+    {% else %}
+    <a href="/restart_queue/" class="topbutton">start</a>
+    {% endif %}
+    <!-- Erstellen des Tables -->
+    <table class="myTable">
+      <tr>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Start</th>
+      </tr>
+      <!-- Einzelne Einträge des Tables erstellen mit den Werten aus der Flask App -->
+      {% for task in tasks %}
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.start }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
